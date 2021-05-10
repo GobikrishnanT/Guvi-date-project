@@ -46,7 +46,7 @@ myBtn.addEventListener('click' , (event) => {
     let entered_date_timeStamp = input_for_date.valueAsNumber;
     let myDate = input_for_date.valueAsDate;
     let div_0 = document.createElement('div');
-    div_0.innerText = myDate;
+    div_0.innerText = "Given input Date is " + myDate;
     let age_in_MiliSeconds = Date.now() - entered_date_timeStamp;
     
 
@@ -58,33 +58,37 @@ myBtn.addEventListener('click' , (event) => {
    let month = 30 * day;
    let year = 365 * day;
 
+   function floorer(num , den) {
+       return Math.round(num / den);
+   }
 
-   let age_in_year = Math.round(age_in_MiliSeconds / year);
+
+   let age_in_year = floorer(age_in_MiliSeconds , year);
    let div_1 = document.createElement('div');
-    div_1.innerText = age_in_year;
+    div_1.innerText = "Year " + age_in_year;
    
-   let age_in_months = Math.round(age_in_MiliSeconds / month);
+   let age_in_months = floorer(age_in_MiliSeconds , month);
    let div_2 = document.createElement('div');
-    div_2.innerText = age_in_months;
+    div_2.innerText = "Month " + age_in_months;
  
-   let age_in_days = Math.round(age_in_MiliSeconds / day);
+   let age_in_days = floorer(age_in_MiliSeconds , day);
    let div_3 = document.createElement('div');
-    div_3.innerText = age_in_days;
+    div_3.innerText = "Days " + age_in_days;
    
-   let age_in_hour = Math.round(age_in_MiliSeconds / hours);
+   let age_in_hour = floorer(age_in_MiliSeconds , hours);
    let div_4 = document.createElement('div');
-    div_4.innerText = age_in_hour;
+    div_4.innerText = "Hour " + age_in_hour;
    
-   let age_in_min = Math.round(age_in_MiliSeconds / minutes);
+   let age_in_min = floorer(age_in_MiliSeconds , minutes);
    let div_5 = document.createElement('div');
-    div_5.innerText = age_in_min;
+    div_5.innerText = "Minutes " + age_in_min;
    
-   let age_in_sec = Math.round(age_in_MiliSeconds / seconds);
+   let age_in_sec = floorer(age_in_MiliSeconds , seconds);
    let div_6 = document.createElement('div');
-    div_6.innerText = age_in_sec;
+    div_6.innerText = "Seconds " + age_in_sec;
 
     let div_miliSec_7 = document.createElement('div');
-    div_miliSec_7.innerText = age_in_MiliSeconds;
+    div_miliSec_7.innerText = "MilliSeconds " + age_in_MiliSeconds;
 
 
     // let myStyle = document.createElement('style');
